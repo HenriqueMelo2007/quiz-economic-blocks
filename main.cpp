@@ -24,9 +24,9 @@ public:
     cout << statement << endl;
     for (int i = 0; i < 3; i++)
     {
-      cout << i + 1 << ". " << options[i] << endl;
+      cout << " " << i + 1 << ". " << options[i] << endl;
     }
-    cout << "Your answer: ";
+    cout << " Your answer: ";
     cin >> userAnswer;
 
     if (userAnswer == correctOption)
@@ -90,26 +90,40 @@ int main()
                {"Mercosur", "African Union", "EU"},
                1),
       Question("Which bloc was formed to address trade issues in the Asia-Pacific region?",
-               {"Asia-Pacific Economic Cooperation", "G20", "NAFTA"},
-               1),
+               { "G20", "Asia-Pacific Economic Cooperation", "NAFTA"},
+               2),
       Question("Which economic bloc is characterized by its single market and common currency?",
-               {"European Union", "ASEAN", "Mercosur"},
-               1),
+               { "ASEAN", "European Union", "Mercosur"},
+               2),
       Question("Which bloc primarily focuses on trade and economic cooperation in the Middle East?",
                {"Gulf Cooperation Council", "EU", "NAFTA"},
-               1)};
-               
+               1),
+      Question("Which economic bloc is known for its free trade agreement among South American countries?",
+               {"Mercosur", "Gulf Cooperation Council", "European Union"},
+               1),
+      Question("What is one of the main objectives of the North American Free Trade Agreement (NAFTA)?",
+               {"Reduce economic cooperation", "Increase tariffs on imported goods", "Eliminate trade barriers between member countries"},
+               3),
+      Question("Which economic bloc is known for including countries from Asia and the Pacific?",
+               {"Mercosur", "African Union", "Asia-Pacific Economic Cooperation"},
+               3),
+      Question("Which organization aims to promote economic and political cooperation among African countries?",
+               {"African Union", "Pacific Islands Forum", "Gulf Cooperation Council"},
+               2),
+      Question("What is the primary goal of the Asia-Pacific Economic Bloc (APEC)?",
+               {"Facilitate trade and economic cooperation in the Asia-Pacific region", "Create a common currency for member countries", "Establish strict trade barriers between member countries"},
+               2)};
 
-  cout << "*************** QUIZ ECONOMIC BLOCKS ***************" << endl;
+  cout << " *************** QUIZ ECONOMIC BLOCKS ***************" << endl;
 
   for (int i = 0; i < questions.size(); i++)
   {
     questions[i].askAndGetResult();
   }
 
-  cout << "Your result: " << corrects << "/" << total << endl;
+  cout << " Your result: " << corrects << "/" << total << endl;
 
-  cout << "Percentage: " << static_cast<float>(corrects) / total * 100 << "%" << endl;
+  cout << " Percentage: " << static_cast<float>(corrects) / total * 100 << "%" << endl;
 
   return 0;
 }
